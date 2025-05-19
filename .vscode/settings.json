@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "random": "c",
+        "array": "c",
+        "hash_set": "c",
+        "deque": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "iterator": "c",
+        "string_view": "c"
+    }
+}
