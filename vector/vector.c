@@ -9,11 +9,40 @@
 // #include <stdbool.h> // bool is already included via vector.h
 // #include <string.h> // Not needed for these stubs
 
-// Corrected parameter type to int
+
+/**
+ * @brief Creates a new, empty vector with a specified initial capacity for int elements.
+ *
+ * If initial_capacity is 0, the internal data pointer will be NULL initially. Memory
+ * will be allocated upon the first addition of an element or explicit reservation.
+ *
+ * @param initial_capacity The initial number of int elements the vector can hold.
+ *                         Must be a non-negative integer.
+ * @return Vector* A pointer to the newly created Vector structure, or NULL if
+ *                 memory allocation fails or if initial_capacity is negative.
+ * @note The caller is responsible for eventually calling vector_destroy() on the
+ *       returned vector to free its resources.
+ */
+
 Vector* vector_create(int initial_capacity) {
-    printf("STUB: vector_create not implemented\n");
-    (void)initial_capacity; // Parameter unused in stub
-    return NULL;
+    if (initial_capacity < 0) return NULL;
+
+    Vector* v = malloc(sizeof(Vector));
+
+    if (v == NULL) return NULL;
+
+    v->capacity = initial_capacity;
+    v->size = 0;
+    v->data = NULL;
+    
+    if (initial_capacity == 0) return v;
+    v->data = malloc(initial_capacity * sizeof(int));
+    if (v->data == NULL){
+        free(v);
+        return NULL;
+    }
+    return v;
+
 }
 
 void vector_destroy(Vector* vec) {
