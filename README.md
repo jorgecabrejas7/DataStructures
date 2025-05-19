@@ -66,8 +66,12 @@ The following data structures are included in this course, roughly grouped by in
 2.  Review the provided `<datastructure_name>.h` file as the specification.
 3.  Implement the corresponding `<datastructure_name>.c` file.
 4.  Add the provided test code snippet to `test.c` (or write my own).
-5.  Compile and run `test.c` to verify the implementation.
-    *   Example compilation (using GCC): `gcc test.c vector/vector.c singly_linked_list/singly_linked_list.c ... -o test_runner -Wall -Wextra -std=c11`
+5.  To compile and run `test.c` to verify the implementation:
+    *   Create a build directory if it doesn't exist: `mkdir build`
+    *   Navigate into the build directory: `cd build`
+    *   Run CMake to configure the project: `cmake ..`
+    *   Run Make to build the project: `make`
+    *   Run the test executable: `./test_program` (or the name specified in your CMakeLists.txt)
 6.  Debug and iterate until all tests pass and I am confident in the implementation.
 
 This project is a personal learning endeavor.
